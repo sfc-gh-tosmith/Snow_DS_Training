@@ -1,2 +1,2 @@
 # Snow_DS_Training
-This is a classroom style education on how to start with Data Science on Snowflake
+Materials provided by Chase with video recordings of myself running these demos
