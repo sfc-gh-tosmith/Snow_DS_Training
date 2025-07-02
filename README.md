@@ -21,6 +21,7 @@ This repository covers the following core areas:
 
 ### 3. Agent Framework with Cortex Analysts & Search
 - How to build agent-based frameworks that utilize multiple Analysts and Search services
+- Leverage the open source [orchestration framework]([https://quickstarts.snowflake.com/guide/building_scalable_time_series_forecasting_models_on_snowflake/index.html#0](https://github.com/Snowflake-Labs/orchestration-framework)) developed by Snowlfake Solution Innovation Team.
 
 ### 4. Time Series Forecasting
 - Build a robust forecasting framework that can handle many partitions
