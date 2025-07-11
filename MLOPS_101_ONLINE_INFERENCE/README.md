@@ -1,7 +1,14 @@
-# Online inference with Snowpark Container Services
+# Online Inference with Snowpark Container Services
 
+This repo is an example of how to create a real time inference endpoint for an ML model using Snowpark Container Services. 
+
+When running the notebook in your Snowflake account, be sure to add the `titanic_snowflake.csv` to your notebook environment. 
+
+Run the notebook to train a model, register it in Snowflake Model Registry, and create an inference service for that model that runs on SPCS. 
 
 ## Inference from Local Machine
+Once you've run the notebook, you can test out online inference from you local machine. Expect sub-second latency from your inference endpoint.
+
 ### Prerequisites
 To set up, make sure you have [uv installed](https://docs.astral.sh/uv/getting-started/installation/)
 
@@ -27,8 +34,12 @@ uv add requests pyJWT cryptography
 ```
 
 ### Running inference
-Make sure your inference endpoint is live. Then, open up `api-call.sh`. Change the account, user, role, endpoing, and snowflake account url on the first command. Copy and paste into your terminal, and you should get a response back. 
+Make sure your inference endpoint is live. Then, open up `api-call.sh`. Change the account, user, role, endpoint, and snowflake account url on the first command. You can find your inference endpoint url by running the `mv.list_services()` cell in the notebook.
 
+Copy and paste the edited first command into your terminal, and you should get a response back!
+```
+Response: {"data":[[0,{"output_feature_0":1}]]}
+```
 
 ## Running inference from Postman
 To run in Postman, run the `jwt_to_oauth.py` file. Something like the following
@@ -43,4 +54,9 @@ This will output an OAuth token. Put this into a header in Postman with the key 
 
 Make sure you have `Content-Type` set to `application/json` and `Content-Length` enabled. Paste in the request body from the `api-call.sh` python examples as raw JSON body. 
 
-Set the url to your container endpoint url. Don't forget to add https:// and /predict at the end. 
+Set the url to your container endpoint url and make sure the method is POST. Don't forget to add https:// and /predict at the end. 
+
+Send the request and you should see a response!
+```
+Response: {"data":[[0,{"output_feature_0":1}]]}
+```
