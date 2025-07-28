@@ -36,6 +36,8 @@ uv add requests pyJWT cryptography
 ### Running inference
 Make sure your inference endpoint is live. Then, open up `api-call.sh`. Change the account, user, role, endpoint, and snowflake account url on the first command. You can find your inference endpoint url by running the `mv.list_services()` cell in the notebook.
 
+If you are wanting to use a service account which is much more real world please use service_account_setup.sql to create the service account to hit the API.
+
 Copy and paste the edited first command into your terminal, and you should get a response back!
 ```
 Response: {"data":[[0,{"output_feature_0":1}]]}

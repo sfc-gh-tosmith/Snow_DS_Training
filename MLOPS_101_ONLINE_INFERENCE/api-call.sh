@@ -1,7 +1,7 @@
 python access-via-keypair_cache.py \
   --account SFPSCOGS-SCS \
-  --user CROMANO \
-  --role sysadmin \
+  --user ML_INFERENCE_SERVICE_USER \
+  --role ML_INFERENCE_ROLE \
   --private_key_file_path ~/.snowflake/keys/rsa_key.p8 \
   --endpoint fdl4qlml-sfpscogs-scs.snowflakecomputing.app \
   --endpoint-path /predict \
